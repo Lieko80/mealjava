@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.isa.gui.Orders.OrdersController">
+    <children>
+        <TableView fx:id="table_list" layoutX="45.0" layoutY="160.0" onMousePressed="#ShowPanel" prefHeight="555.0" prefWidth="405.0">
+            <columns>
+            <TableColumn fx:id="col_orders_number" prefWidth="96.0" text="Orders Number" />
+                <TableColumn fx:id="col_email" prefWidth="105.0" text="Email" />
+                <TableColumn fx:id="col_firstname" prefWidth="92.0" text="Firstname" />
+                <TableColumn fx:id="col_lastname" prefWidth="96.0" text="Lastname" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txt_search" layoutX="45.0" layoutY="111.0" prefHeight="37.0" prefWidth="314.0" promptText="machin@bidule.com">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+      <Label fx:id="msgNoOrderChosen" layoutX="562.0" layoutY="543.0" prefHeight="63.0" prefWidth="341.0" text="Choisissez d'abord une commande pour voir les détails de la commande!" textAlignment="CENTER" visible="false" wrapText="true" AnchorPane.bottomAnchor="50.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+        <AnchorPane fx:id="pane_details" layoutX="488.0" layoutY="160.0" prefHeight="555.0" prefWidth="489.0">
+            <children>
+                <TextField fx:id="txt_email" editable="false" layoutX="122.0" layoutY="24.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txt_firstname" editable="false" layoutX="122.0" layoutY="99.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txt_lastname" editable="false" layoutX="122.0" layoutY="177.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txt_address" editable="false" layoutX="122.0" layoutY="252.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txt_order" editable="false" layoutX="122.0" layoutY="327.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="txt_delivery" editable="false" layoutX="122.0" layoutY="397.0" prefHeight="37.0" prefWidth="302.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="55.0" layoutY="33.0" text="Email">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="41.0" layoutY="108.0" text="Firstname">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="42.0" layoutY="186.0" text="Lastname">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="37.0" layoutY="336.0" text="Order Date">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="29.0" layoutY="406.0" text="Delivery date">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="47.0" layoutY="261.0" text="Address">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+            <Button fx:id="btn_order_detail" layoutX="194.0" layoutY="473.0" mnemonicParsing="false" onAction="#ShowCart" text="Order Detail" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <VBox fx:id="cartDetailsBox" layoutY="-23.0" prefHeight="578.0" prefWidth="489.0" visible="false">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label text="Détails de la commande numéro:" />
+                        <TextField fx:id="orderId" prefHeight="23.0" prefWidth="175.0" promptText="choisissez une commande ci-dessus">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="cartItemsTable" prefHeight="579.0" prefWidth="489.0">
+                     <columns>
+                        <TableColumn fx:id="colCartIngdts" prefWidth="173.60003662109375" text="Ingredients" />
+                        <TableColumn fx:id="colCartQuantity" minWidth="1.5999755859375" prefWidth="90.39996337890625" text="Quantity" />
+                        <TableColumn fx:id="colCartPrice" prefWidth="84.79998779296875" text="Price" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            </children>
+        </AnchorPane>
+        <Label layoutX="45.0" layoutY="76.0" text="Entrez l'e-mail que vous cherchez :" />
+    </children>
+</AnchorPane>
